@@ -11,6 +11,7 @@ func main() {
 	serviceConfig := controller.Initialize()
 
 	mux := controller.Router()
+	//start server in localhost
 	fmt.Printf("Server started on http://localhost:%v", serviceConfig.Port+"\n")
 	err := http.ListenAndServe(":"+serviceConfig.Port, mux)
 	if err != nil {
